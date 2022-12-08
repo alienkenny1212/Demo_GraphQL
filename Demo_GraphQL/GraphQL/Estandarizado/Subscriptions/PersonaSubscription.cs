@@ -1,0 +1,15 @@
+﻿using Demo_Core.Modelos;
+
+namespace Demo_GraphQL.GraphQL.Estandarizado.Subscriptions
+{
+    [ExtendObjectType("Subscription")]
+    public class PersonaSubscription
+    {
+        [Subscribe]
+        [Topic]
+        public Persona OnPersonaAdded([EventMessage] Persona persona)
+        {
+            return persona;
+        }
+    }
+}
